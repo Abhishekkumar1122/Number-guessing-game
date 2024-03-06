@@ -1,0 +1,49 @@
+# # number guessing game
+
+import random
+number=random.randint(1,20)
+tries=6
+
+uname=input("Enter your name : ")
+uname=uname.strip()
+
+print(f"Hello! {uname}")
+print("Would you like to play a game?")
+print("1) Yes")
+print("2) No")
+
+option =input("Select your option: ")
+option=int(option)
+
+if option==1:
+    print("I\m' Thinking a Number bettwen 1 and 20")
+    print("You have to guess a number in six tries")
+
+    guess=input("Guess a number: ")
+    guess=int(guess)
+    tries+=1
+
+    if guess>number:
+        print("guess lower.....")
+    if guess<number:
+        print("guess higher.....")
+
+    while guess!=number and tries>=6:
+        guess=input("Try again: ")
+        guess=int(guess)
+        tries+=1
+
+        if guess>number:
+            print("guess lower.....")
+        if guess<number:
+            print("guess higher.....")
+
+    if guess==number:
+        print("You won!!")
+        print("Number of tries: {tries}")
+    else:
+        print("you lost!!")
+elif option==2:
+    print("thank you!")
+else:
+    print("invaild option !")
